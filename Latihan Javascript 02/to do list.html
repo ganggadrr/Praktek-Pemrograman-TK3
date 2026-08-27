@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>To-Do List</title> 
+</head> 
+<body> 
+    <h2>To-Do List</h2> <!-- Menampilkan judul To-Do List -->
+    <input type="text" id="todoInput" placeholder="Tulis tugas..."> <!-- Membuat kotak input untuk memasukkan tugas -->
+    <button onclick="tambahTodo()">Tambah</button> <!-- Membuat tombol Tambah dan menjalankan fungsi tambahTodo() ketika diklik -->
+    <ul id="todoList"></ul> <!-- Membuat daftar kosong untuk menampilkan tugas yang ditambahkan -->
+        <script> <!-- Membuka bagian JavaScript -->
+            function tambahTodo() { // Membuat fungsi bernama tambahTodo yang dijalankan ketika tombol diklik
+            let input = document.getElementById("todoInput"); // Mengambil elemen input berdasarkan id "todoInput"
+            
+            if (input.value.trim() === "") { // Mengecek apakah input kosong setelah menghapus spasi di awal/akhir
+                alert("Silakan tulis tugas terlebih dahulu!"); // Menampilkan pesan jika pengguna belum memasukkan tugas
+                return; 
+            }
+            let item = document.createElement("li"); // Membuat elemen <li> baru untuk menampilkan tugas
+            item.textContent = input.value; // Memasukkan teks yang diketik pengguna ke dalam elemen <li>
+            document.getElementById("todoList").appendChild(item); // Menambahkan elemen <li> ke dalam daftar <ul>
+            input.value = ""; // Mengosongkan kotak input setelah tugas berhasil ditambahkan
+        }
+    </script> 
+</body> 
+</html> 

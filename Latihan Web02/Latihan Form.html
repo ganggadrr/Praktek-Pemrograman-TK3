@@ -1,0 +1,74 @@
+<!DOCTYPE html> <!-- kalau ini menggunakan html -->
+<html> <!-- untuk membuka semua file yang ada di didalam dokumen html -->
+
+<head> <!-- informasi halaman web -->
+    <title>Latihan membuat Form</title> <!-- judul halaman yang akan muncul dalam web -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+        }
+    </style>
+</head>
+
+<body> <!-- berisi tampilan yang akan tertampil di halam web -->
+    <form> <!-- memebuat form -->
+        <fieldset style="width: 360px;"> 
+        <table>
+            <tr>
+                <td>
+                    <label for="name"> <!-- Membuat label untuk input nama, for digunakan untuk mengisi inputan  -->
+                        Name : <!-- tulisan yang akan tertampil-->
+                    </label>
+                </td>
+                <td>
+                    <input type="text" id="name" name="name" placeholder="you name here">
+                    <!-- type teks untuk membuat kotak untuk memasukkan nama, name untuk memasukan nama, placeholder tulisan yang tertampil pada kotak -->
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="email"> <!-- Membuat label untuk input email, for digunakan untuk mengisi inputan  -->
+                        Email : <!-- tulisan yang akan tertampil-->
+                    </label>
+                </td>
+                <td>
+                    <input type="email" id="email" name="email" placeholder="you email here">
+                    <!-- type email untuk membuat kotak untuk memasukkan email, name untuk memasukan email, placeholder tulisan yang tertampil pada kotak -->
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="address">
+                        Address: <!-- label untuk memberikan keterangan bahwa input berikut adalah alamat -->
+                    </label>
+                </td>
+                <td>
+                    <textarea id="address" name="address" rows="5" cols="30">
+25 Nowhere Street
+Somewhere
+Not Here
+Y2K SRU 
+                    </textarea> <!-- textarea digunakan untuk memasukkan teks yang terdiri dari beberapa baris-->
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="postcode">
+                        Postcode:</label> <!-- label untuk memberikan keterangan kode pos -->
+                    </label>
+                </td>
+                <td>
+                    <input type="text" id="postcode" name="postcode" placeholder="postal code">
+                </td>
+            </tr>
+        </table>
+        </fieldset>
+    </form>
+    
+</body>
+
+</html>
