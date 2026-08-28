@@ -1,0 +1,872 @@
+```css
+/* ================= UMUM ================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.black {
+    width: 100%;
+    height: 80px;
+
+    background-color: black;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5px 30px;
+
+    box-sizing: border-box;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    transition: 0.3s;
+}
+
+
+/* Navbar ketika scroll */
+
+.black.scrolled {
+    background-color: rgba(0, 0, 0, 0.95);
+
+    box-shadow:
+        0 3px 15px
+        rgba(247, 127, 190, 0.4);
+}
+
+
+/* ================= LOGO ================= */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.logo img {
+    width: 110px;
+    height: 70px;
+
+    object-fit: contain;
+}
+
+
+/* ================= MENU ================= */
+
+.menu {
+    width: 30%;
+    height: 50px;
+
+    border: 2px solid #F77FBE;
+
+    border-radius: 60px;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    background-color: #F77FBE;
+}
+
+.black .nav {
+    display: flex;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+.black .nav-link {
+    color: black !important;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.black .nav-link:hover {
+    color: white !important;
+
+    transform: translateY(-2px);
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 550px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 40px 60px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+
+/* Video */
+
+.hero-video {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+
+/* Lapisan gelap */
+
+.hero-overlay {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color:
+        rgba(0, 0, 0, 0.50);
+
+    z-index: 1;
+}
+
+
+/* Tulisan */
+
+.teks1 {
+    position: relative;
+
+    z-index: 2;
+
+    width: 70%;
+}
+
+
+/* Font PrimeTime */
+
+@font-face {
+    font-family: 'PrimeTime';
+
+    src: url("Asset/Primetime.ttf")
+    format('truetype');
+}
+
+
+/* Judul */
+
+.teks1 h1 {
+    font-family: 'PrimeTime', sans-serif;
+
+    margin: 0 0 15px 0;
+
+    font-size: 70px;
+
+    font-weight: normal;
+
+    color: #F77FBE;
+
+    opacity: 0;
+
+    transform:
+        translateY(40px);
+
+    transition:
+        all 1s ease;
+}
+
+
+/* Judul muncul */
+
+.teks1 h1.show {
+    opacity: 1;
+    transform:
+        translateY(0);
+}
+
+
+/* Subtitle */
+
+.teks1 p {
+    margin: 0 0 25px 0;
+
+    color: white;
+
+    font-size: 28px;
+
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        all 1s ease 0.3s;
+}
+
+
+/* Subtitle muncul */
+
+.teks1 p.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* Tombol video */
+
+#playVideo {
+    padding: 12px 25px;
+
+    border: 2px solid #F77FBE;
+
+    border-radius: 30px;
+
+    background-color: #F77FBE;
+
+    color: black;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#playVideo:hover {
+    background-color: black;
+
+    color: #F77FBE;
+
+    transform:
+        scale(1.05);
+}
+
+
+/* ================= AWARDS ================= */
+
+.awards {
+    width: 100%;
+
+    min-height: 450px;
+
+    padding: 50px 55px;
+
+    box-sizing: border-box;
+
+    background-color: black;
+}
+
+.awards h1 {
+    margin: 0 0 15px 0;
+
+    font-size: 40px;
+
+    color: #F77FBE;
+
+    text-align: center;
+}
+
+.awards-intro {
+    max-width: 900px;
+
+    margin:
+        0 auto 35px auto;
+
+    color: white;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    text-align: center;
+}
+
+
+/* Kotak awards */
+
+.kotak-container {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+
+/* Kartu */
+
+.awards1 {
+    width: 30%;
+
+    min-height: 180px;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    background-color: #F77FBE;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    transition:
+        all 0.3s ease;
+
+    cursor: pointer;
+}
+
+
+/* Hover kartu */
+
+.awards1:hover {
+    transform:
+        translateY(-12px)
+        scale(1.03);
+
+    box-shadow:
+        0 15px 30px
+        rgba(247, 127, 190, 0.4);
+}
+
+.awards1 h2 {
+    margin:
+        0 0 15px 0;
+
+    color: black;
+
+    font-size: 22px;
+}
+
+.awards1 p {
+    margin: 0;
+
+    color: black;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+/* ================= MUSIC ================= */
+
+.music {
+    width: 100%;
+
+    min-height: 600px;
+
+    padding: 50px;
+
+    box-sizing: border-box;
+
+    background-color: black;
+}
+
+.music > h1 {
+    margin: 0 0 10px 0;
+
+    color: #F77FBE;
+
+    font-size: 40px;
+
+    text-align: center;
+}
+
+.music > p {
+    margin:
+        0 0 40px 0;
+
+    color: white;
+
+    text-align: center;
+}
+
+
+/* Pembagian kiri kanan */
+
+.music-container {
+    display: flex;
+
+    width: 100%;
+
+    gap: 50px;
+
+    align-items: stretch;
+}
+
+
+/* Kiri */
+
+.music1 {
+    width: 55%;
+}
+
+.music1 h2 {
+    margin:
+        0 0 25px 0;
+
+    color: #F77FBE;
+
+    font-size: 28px;
+}
+
+.music1 ul {
+    margin: 0;
+
+    padding-left: 25px;
+}
+
+.music1 li {
+    margin-bottom: 18px;
+
+    color: white;
+
+    line-height: 1.7;
+
+    text-align: justify;
+}
+
+.music1 strong {
+    color: #F77FBE;
+}
+
+
+/* ================= GRAFIK ================= */
+
+.grafik {
+    width: 45%;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    background-color: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(247, 127, 190, 0.25);
+}
+
+.grafik h2 {
+    margin:
+        0 0 5px 0;
+
+    color: black;
+
+    text-align: center;
+}
+
+.grafik-info {
+    margin:
+        0 0 25px 0;
+
+    color: #777;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+/* Satu baris grafik */
+
+.grafik-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Nama lagu */
+
+.music-name {
+    width: 130px;
+
+    color: black;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* Progress */
+
+.grafik-item .progress {
+    flex: 1;
+
+    height: 22px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background-color: #eeeeee;
+}
+
+
+/* Batang grafik */
+
+.grafik-item .progress-bar {
+    width: 0;
+
+    background-color: #F77FBE;
+
+    border-radius: 20px;
+
+    transition:
+        width 1.5s ease;
+}
+
+
+/* Persentase */
+
+.grafik-item > span {
+    width: 35px;
+
+    color: black;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* Hover grafik */
+
+.grafik-item:hover {
+    transform:
+        scale(1.02);
+}
+
+.grafik-item {
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contac {
+    width: 100%;
+
+    min-height: 450px;
+
+    padding: 50px 45px;
+
+    box-sizing: border-box;
+
+    background-color: black;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.contac h1 {
+    color: #F77FBE;
+
+    font-size: 40px;
+
+    margin:
+        0 0 40px 0;
+
+    text-align: center;
+}
+
+
+/* Container */
+
+.kotak-container1 {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+}
+
+
+/* Link */
+
+.contact-link {
+    width: 30%;
+
+    text-decoration: none;
+}
+
+
+/* Contact card */
+
+.contac1 {
+    min-height: 200px;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    background-color: #F77FBE;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    transition:
+        all 0.3s ease;
+}
+
+
+/* Hover contact */
+
+.contac1:hover {
+    transform:
+        translateY(-10px)
+        scale(1.03);
+
+    box-shadow:
+        0 15px 30px
+        rgba(247, 127, 190, 0.4);
+}
+
+.contac1 h2 {
+    margin:
+        0 0 15px 0;
+
+    font-size: 22px;
+
+    color: black;
+}
+
+.contac1 img {
+    width: 80px;
+
+    height: 80px;
+
+    object-fit: contain;
+
+    margin-bottom: 10px;
+}
+
+.contac1 p {
+    margin: 0;
+
+    color: black;
+
+    font-weight: bold;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+    width: 100%;
+
+    background-color: #F77FBE;
+
+    padding: 25px 20px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+
+    color: black;
+
+    font-size: 14px;
+}
+
+
+/* ================= BACK TO TOP ================= */
+
+#backTop {
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    width: 50px;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: #F77FBE;
+
+    color: black;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: none;
+
+    z-index: 999;
+
+    transition:
+        all 0.3s ease;
+}
+
+#backTop:hover {
+    transform:
+        translateY(-5px);
+
+    background-color: white;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .menu {
+        width: 50%;
+    }
+
+    .music-container {
+        flex-direction: column;
+    }
+
+    .music1,
+    .grafik {
+        width: 100%;
+    }
+
+    .kotak-container {
+        flex-direction: column;
+    }
+
+    .awards1 {
+        width: 100%;
+    }
+
+    .kotak-container1 {
+        flex-direction: column;
+    }
+
+    .contact-link {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .black {
+        height: auto;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        padding: 10px;
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+    .hero {
+        min-height: 450px;
+
+        padding: 30px;
+    }
+
+    .teks1 h1 {
+        font-size: 45px;
+    }
+
+    .teks1 p {
+        font-size: 20px;
+    }
+
+    .music,
+    .awards {
+        padding: 30px 20px;
+    }
+
+    .grafik {
+        padding: 20px;
+    }
+
+    .music-name {
+        width: 100px;
+
+        font-size: 10px;
+    }
+
+}
+```
