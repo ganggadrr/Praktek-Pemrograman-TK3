@@ -1,7 +1,28 @@
+<?php
+include "koneksi.php";
+$queryAwards = mysqli_query(
+    $koneksi,
+    "SELECT * FROM awards ORDER BY ID ASC"
+);
+
+if (!$queryAwards) {
+    die("Query Awards gagal: " . mysqli_error($koneksi));
+}
+
+$queryMusic = mysqli_query(
+    $koneksi,
+    "SELECT * FROM music ORDER BY ID ASC"
+);
+
+if (!$queryMusic) {
+    die("Query Music gagal: " . mysqli_error($koneksi));
+}
+?>
+
 <!DOCTYPE html> 
 <html> 
 
-<head> <!-- informasi halaman web -->
+<head> 
     <title>Latihan PHP</title> <!-- judul halaman yang akan muncul dalam web -->
     <link rel="stylesheet" href="Asset/css/bootstrap.min.css"> <!-- untuk menghubungkan file css dengan html -->
     <link rel="stylesheet" href="PHP.css"> <!-- untuk menghubungkan file css dengan html -->
@@ -64,34 +85,27 @@
             </p>
 
             <div class="kotak-container">
-                <div class="awards1">
-                    <h2>MTV Video Music Awards (VMA)</h2>
-                    <p>
-                        Memenangkan Best Metaverse Performance (2022) 
-                        serta Best Group atau Group of the Year (2023 & 2025).
-                    </p>
-                </div>
+                 <?php
 
-                <div class="awards1">
-                    <h2>Guinness World Records</h2>
-                    <p>
-                        Memecahkan berbagai rekor, termasuk sebagai 
-                        artis musik dengansubscriber terbanyak di YouTube
-                    </p>
-                </div>
+    // Mengulang semua data Awards dari database
+    while ($award = mysqli_fetch_assoc($queryAwards)) {
+    ?>
+        <div class="awards1">
 
-                <div class="awards1">
-                    <h2>MAMA Awards 2022</h2>
-                    <p>
-                        BLACKPINK memenangkan kategori Best Female Group serta Worldwide Fans' 
-                        Choice Top 10 (menjadi satu-satunya grup wanita yang meraih penghargaan 
-                        tersebut pada tahun itu).
-                    </p>
-                </div>
-            </div>
+            <h2>
+                <?php echo htmlspecialchars($award['Judul']); ?>
+            </h2>
 
+            <p>
+                <?php echo htmlspecialchars($award['Deskripsi']); ?>
+            </p>
+        </div>
+    <?php
+    }
+
+    ?>
+        </div>
             <div class="award-slider">
-
                 <div class="award-track">
 
                     <!-- Foto BLACKPINK -->
@@ -111,137 +125,67 @@
                     <img src="Asset/image/bp11.jpg" alt="BLACKPINK 6">
 
                 </div>
-
             </div>
         </header>
     </section>
 
     <section id="music"> 
-    <header class="music">
-        <h1>
-            BEST MUSICs
-        </h1>
-        <p>
-            Best Music BLACKPINK dari tahun 2016-2026
-        </p>
-        <div class="music-container"> <!-- Pembagi kiri dan kanan -->
-            <div class="music1"> <!-- BAGIAN KIRI -->
-                <h2>
-                    Perjalanan Musik BLACKPINK (2016–2026)
-                </h2>
-                <ul>
-                    <li>
-                        <strong>Era Debut (2016):</strong>
-                        BLACKPINK debut dengan album single <i>Square One</i>
-                        yang berisi lagu "Whistle" dan "Boombayah", diikuti
-                        <i>Square Two</i> dengan lagu "Playing with Fire" dan "Stay".
-                    </li>
+        <header class="music">
+            <h1>
+                BEST MUSICs
+            </h1>
+            <p>
+                Best Music BLACKPINK dari tahun 2016-2026
+            </p>
+            <div class="music-container">
+                <div class="music1"> 
+                    <h2>
+                        Perjalanan Musik BLACKPINK (2016–2026)
+                    </h2>
+                    <ul>
+                        <li>
+                            <strong>Era Debut (2016):</strong>
+                            BLACKPINK debut dengan album single <i>Square One</i>
+                            yang berisi lagu "Whistle" dan "Boombayah", diikuti
+                            <i>Square Two</i> dengan lagu "Playing with Fire" dan "Stay".
+                        </li>
 
-                    <li>
-                        <strong>Era Puncak Popularitas (2017–2019):</strong>
-                        Merilis lagu seperti "As If It's Your Last" (2017),
-                        EP <i>Square Up</i> dengan lagu utama "Ddu-Du Ddu-Du" (2018),
-                        serta EP <i>Kill This Love</i> (2019).
-                    </li>
+                        <li>
+                            <strong>Era Puncak Popularitas (2017–2019):</strong>
+                            Merilis lagu seperti "As If It's Your Last" (2017),
+                            EP <i>Square Up</i> dengan lagu utama "Ddu-Du Ddu-Du" (2018),
+                            serta EP <i>Kill This Love</i> (2019).
+                        </li>
 
-                    <li>
-                        <strong>Era Album Penuh & Kolaborasi (2020–2022):</strong>
-                        Merilis album <i>The Album</i> (2020) dengan lagu
-                        "How You Like That" dan "Lovesick Girls", serta album
-                        <i>Born Pink</i> (2022) dengan lagu "Pink Venom" dan "Shut Down".
-                    </li>
+                        <li>
+                            <strong>Era Album Penuh & Kolaborasi (2020–2022):</strong>
+                            Merilis album <i>The Album</i> (2020) dengan lagu
+                            "How You Like That" dan "Lovesick Girls", serta album
+                            <i>Born Pink</i> (2022) dengan lagu "Pink Venom" dan "Shut Down".
+                        </li>
 
-                    <li>
-                        <strong>Era Terbaru (2023–2026):</strong>
-                        Merilis lagu "The Girls" (2023), single "Jump" (2025),
-                        serta mini album <i>Deadline</i> (2026) dengan lagu utama "GO".
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="grafik">  <!-- BAGIAN KANAN -->
-                <h2>
-                    TOP 5 MUSIC
-                </h2>
-
-                <div class="grafik-item">
-                    <a href="https://youtu.be/IHNzOHi8sJs?si=GQdr-kBUVfwH6uv3"
-                        target="_blank"
-                        class="judul-lagu">
-                        DDU-DU DDU-DU
-                    </a>
-
-                    <div class="progress" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width:100%"></div>
-                    </div>
-                    <span class="jumlah-view">
-                        2B+
-                    </span>
+                        <li>
+                            <strong>Era Terbaru (2023–2026):</strong>
+                            Merilis lagu "The Girls" (2023), single "Jump" (2025),
+                            serta mini album <i>Deadline</i> (2026) dengan lagu utama "GO".
+                        </li>
+                    </ul>
                 </div>
+                 <div class="grafik">
 
-                <div class="grafik-item">
-                     <a href="https://youtu.be/2S24-y0Ij3Y?si=I9wS6rainmQKPBoL"
-                        target="_blank"
-                        class="judul-lagu">
-                        KILL THIS LOVE
-                    </a>
+                    <h2>
+                        TOP 5 MUSIC
+                    </h2>
 
-                    <div class="progress" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width: 90%"></div>
+                    <div id="musicGrafik">
+                        <p style="color: black; text-align: center;">
+                            Memuat data..
+                        </p>
                     </div>
-                    <span class="jumlah-view">
-                        2B+
-                    </span>
-                </div>
-
-                <div class="grafik-item">
-                    <a href="https://youtu.be/ioNng23DkIM?si=8UH4x-CPaUytzlfx"
-                        target="_blank"
-                        class="judul-lagu">
-                            HOW YOU LIKE THAT
-                    </a>
-
-                    <div class="progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width: 75%"></div>
-                    </div>
-                     <span class="jumlah-view">
-                        1B+
-                    </span>
-                </div>
-
-                <div class="grafik-item">
-                    <a href="https://youtu.be/Amq-qlqbjYA?si=ggO9TpR_rjhZoaqx"
-                        target="_blank"
-                        class="judul-lagu">
-                            AS IF IT'S YOUR LAST
-                    </a>
-
-                    <div class="progress" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width:65%"></div>
-                    </div>
-                    <span class="jumlah-view">
-                        1B+
-                    </span>
-                </div>
-
-                <div class="grafik-item">
-                    <a href="https://youtu.be/bwmSjveL3Lc?si=6bf4Wmr5XokTbcdG"
-                        target="_blank"
-                        class="judul-lagu">
-                            BOOMBAYAH
-                    </a>
-
-                    <div class="progress" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width: 60%"></div>
-                    </div>
-                     <span class="jumlah-view">
-                        1B+
-                    </span>
                 </div>
             </div>
-        </div>
-    </header>
-</section>
+        </header>
+    </section>
     
 <section id="contac">
     <header class="contac">

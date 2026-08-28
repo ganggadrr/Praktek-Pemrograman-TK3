@@ -19,6 +19,7 @@ socialToggle.addEventListener("click", function () {
     socialMenu.classList.toggle("active");
 });
 
+
 const contactForm = document.getElementById("contactForm");
 if (contactForm) {
     contactForm.addEventListener("submit", function(event) {
@@ -39,3 +40,99 @@ if (contactForm) {
         contactForm.reset();
     });
 }
+
+function updateMusic() {
+
+    fetch("get_music.php")
+        .then(function(response) {
+            if (!response.ok) {
+
+                throw new Error("Gagal mengambil data");
+            }
+            return response.json();
+
+        })
+
+        .then(function(data) {
+
+            const musicGrafik =
+                document.getElementById("musicGrafik");
+            if (!musicGrafik) {
+
+                return;
+
+            }
+
+            musicGrafik.innerHTML = "";
+            data.forEach(function(music) {
+
+                const item =
+                    document.createElement("div");
+                item.className = "grafik-item";
+
+                const link =
+                    document.createElement("a");
+                link.href = music.Link;
+                link.target = "_blank";
+                link.className = "judul-lagu";
+                link.textContent = music.Judul;
+
+                const progress =
+                    document.createElement("div");
+                progress.className = "progress";
+
+                progress.setAttribute(
+                    "role",
+                    "progressbar"
+                );
+
+                progress.setAttribute(
+                    "aria-valuenow",
+                    music.Presentase
+                );
+
+                progress.setAttribute(
+                    "aria-valuemin",
+                    "0"
+                );
+
+                progress.setAttribute(
+                    "aria-valuemax",
+                    "100"
+                );
+
+                const progressBar =
+                    document.createElement("div");
+                progressBar.className = "progress-bar";
+                progressBar.style.width =
+                    music.Presentase + "%";
+                progress.appendChild(progressBar);
+
+                const viewer =
+                    document.createElement("span");
+                viewer.className = "jumlah-view";
+                viewer.textContent = music.Viewers;
+
+                item.appendChild(link);
+                item.appendChild(progress);
+                item.appendChild(viewer);
+                musicGrafik.appendChild(item);
+
+            });
+
+        })
+        .catch(function(error) {
+            console.error(
+                "Gagal mengambil data music:",
+                error
+            );
+        });
+
+}
+
+updateMusic();
+setInterval(function() {
+
+    updateMusic();
+
+}, 2000);
