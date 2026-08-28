@@ -2,9 +2,9 @@
 <html> 
 
 <head> <!-- informasi halaman web -->
-    <title>Latihan membuat Web</title> <!-- judul halaman yang akan muncul dalam web -->
+    <title>Latihan Javascript</title> <!-- judul halaman yang akan muncul dalam web -->
     <link rel="stylesheet" href="Asset/css/bootstrap.min.css"> <!-- untuk menghubungkan file css dengan html -->
-    <link rel="stylesheet" href="style.css"> <!-- untuk menghubungkan file css dengan html -->
+    <link rel="stylesheet" href="js.css"> <!-- untuk menghubungkan file css dengan html -->
 </head>
 
 <body>
@@ -14,19 +14,28 @@
                 <img src="Asset/image/logo 2.jpg">
                 <img src="Asset/image/logo 1.jpg">
             </div>
+            
             <div class="menu"> <!-- untuk membuat menu -->
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" style="color: black;" href="#home">Home</a>
+                        <a class="nav-link active" aria-current="page" style="color: black;" href="#home">Home
+                            <img src="Asset/image/house-solid.png" alt="home">
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: black;" href="#awards">Awards</a>
+                        <a class="nav-link" style="color: black;" href="#awards">Awards
+                            <img src="Asset/image/award-solid.png" alt="award">
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: black;" href="#music">Music</a>
+                        <a class="nav-link" style="color: black;" href="#music">Music
+                            <img src="Asset/image/record-vinyl-solid.png" alt="music">
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" style="color: black;"  href="#contac">Contact</a>
+                        <a class="nav-link active" aria-current="page" style="color: black;"  href="#contac">Contact
+                            <img src="Asset/image/phone-solid.png" alt="phone">
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -34,16 +43,12 @@
     </section>
 
     <section id="home"> 
-        <header class="hero">
-            <div class="teks1">
-                <h1> 
-                     BLACKPINK
-                </h1>
-                <p>
-                    In Your Area
-                </p>
-            </div>
-        </header>     
+       <header class="hero"> 
+            <video class="hero-video" autoplay muted loop playsinline> <!-- Video yang menjadi background -->
+                <source src="Asset/image/vidio 1.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div> <!-- Lapisan gelap agar tulisan terlihat jelas -->
+        </header>
     </section>
 
     <section id="awards">
@@ -51,7 +56,7 @@
             <h1> 
                 AWARDS
             </h1>
-            <p>
+            <p class="awards2">
                 BLACKPINK telah memenangkan lebih dari 350 penghargaan secara total 
                 (termasuk karier grup dan solo para anggotanya). Untuk grup saja, 
                 mereka mengumpulkan lebih dari 120 trofi dari acara musik dan penghargaan Korea, 
@@ -84,13 +89,37 @@
                     </p>
                 </div>
             </div>
+
+            <div class="award-slider">
+
+                <div class="award-track">
+
+                    <!-- Foto BLACKPINK -->
+                    <img src="Asset/image/bp10.jpg" alt="BLACKPINK 1">
+                    <img src="Asset/image/bp2.jpg" alt="BLACKPINK 2">
+                    <img src="Asset/image/bp3.jpg" alt="BLACKPINK 3">
+                    <img src="Asset/image/bp4.jpg" alt="BLACKPINK 4">
+                    <img src="Asset/image/bp5.jpg" alt="BLACKPINK 5">
+                    <img src="Asset/image/bp11.jpg" alt="BLACKPINK 5">
+
+                    <!-- Foto diulang agar scroll tidak terputus -->
+                    <img src="Asset/image/bp10.jpg" alt="BLACKPINK 1">
+                    <img src="Asset/image/bp2.jpg" alt="BLACKPINK 2">
+                    <img src="Asset/image/bp3.jpg" alt="BLACKPINK 3">
+                    <img src="Asset/image/bp4.jpg" alt="BLACKPINK 4">
+                    <img src="Asset/image/bp5.jpg" alt="BLACKPINK 5">
+                    <img src="Asset/image/bp11.jpg" alt="BLACKPINK 5">
+
+                </div>
+
+            </div>
         </header>
     </section>
 
     <section id="music"> 
     <header class="music">
         <h1>
-            BEST MUSIC
+            BEST MUSICs
         </h1>
         <p>
             Best Music BLACKPINK dari tahun 2016-2026
@@ -132,70 +161,169 @@
             
             <div class="grafik">  <!-- BAGIAN KANAN -->
                 <h2>
-                    Perkembangan Musik
+                    TOP 5 MUSIC
                 </h2>
+
                 <div class="grafik-item">
-                    <span>2016</span>
-                    <div class="progress" role="progressbar" aria-label="2016" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width: 30%"></div>
+                    <a href="https://youtu.be/IHNzOHi8sJs?si=GQdr-kBUVfwH6uv3"
+                        target="_blank"
+                        class="judul-lagu">
+                        DDU-DU DDU-DU
+                    </a>
+
+                    <div class="progress" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" style="width:100%"></div>
                     </div>
+                    <span class="jumlah-view">
+                        2B+
+                    </span>
                 </div>
 
                 <div class="grafik-item">
-                    <span>2018</span>
-                    <div class="progress" role="progressbar" aria-label="2018" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width: 50%"></div>
+                     <a href="https://youtu.be/2S24-y0Ij3Y?si=I9wS6rainmQKPBoL"
+                        target="_blank"
+                        class="judul-lagu">
+                        KILL THIS LOVE
+                    </a>
+
+                    <div class="progress" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" style="width: 90%"></div>
                     </div>
+                    <span class="jumlah-view">
+                        2B+
+                    </span>
                 </div>
 
                 <div class="grafik-item">
-                    <span>2020</span>
-                    <div class="progress" role="progressbar" aria-label="2020" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width: 70%"></div>
+                    <a href="https://youtu.be/ioNng23DkIM?si=8UH4x-CPaUytzlfx"
+                        target="_blank"
+                        class="judul-lagu">
+                            HOW YOU LIKE THAT
+                    </a>
+
+                    <div class="progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" style="width: 75%"></div>
                     </div>
+                     <span class="jumlah-view">
+                        1B+
+                    </span>
                 </div>
 
                 <div class="grafik-item">
-                    <span>2022</span>
-                    <div class="progress" role="progressbar" aria-label="2022" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width: 85%"></div>
+                    <a href="https://youtu.be/Amq-qlqbjYA?si=ggO9TpR_rjhZoaqx"
+                        target="_blank"
+                        class="judul-lagu">
+                            AS IF IT'S YOUR LAST
+                    </a>
+
+                    <div class="progress" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" style="width:65%"></div>
                     </div>
+                    <span class="jumlah-view">
+                        1B+
+                    </span>
                 </div>
 
                 <div class="grafik-item">
-                    <span>2026</span>
-                    <div class="progress" role="progressbar" aria-label="DDU-DU DDU-DU (2018)" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width: 100%"></div>
+                    <a href="https://youtu.be/bwmSjveL3Lc?si=6bf4Wmr5XokTbcdG"
+                        target="_blank"
+                        class="judul-lagu">
+                            BOOMBAYAH
+                    </a>
+
+                    <div class="progress" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" style="width: 60%"></div>
                     </div>
+                     <span class="jumlah-view">
+                        1B+
+                    </span>
                 </div>
             </div>
         </div>
     </header>
 </section>
     
-<section id="contac"> 
-       <header class="contac">    
-            <h1> 
-                CONTACT
-            </h1>
-    
-            <div class="kotak-container1">
-                <div class="contac1">
-                    <h2>YOUTUBE</h2>
-                    <img src="Asset/image/youtune-removebg-preview.png">
+<section id="contac">
+    <header class="contac">
+        <h1>CONTACT</h1>
+             <div class="contact-form">
+
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="nama">Nama Pengirim</label>
+                    <input type="text"id="nama" name="nama" placeholder="Masukkan nama Anda" required>
                 </div>
 
-                <div class="awards1">
-                    <h2>Email</h2>
-                    <img src="Asset/image/email-removebg-preview.png">
+                <div class="form-group">
+                    <label for="email">Alamat Email</label>
+                    <input type="email" id="email" name="email" placeholder="Masukkan alamat email" required>
                 </div>
 
-                <div class="awards1">
-                    <h2>INSTAGRAM</h2>
-                    <img src="Asset/image/ig-removebg-preview.png">
+                <div class="form-group">
+                    <label for="pesan">Isi Pesan</label>
+                    <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
                 </div>
+
+                <button type="submit" class="btn-kirim">
+                    KIRIM PESAN
+                </button>
+            </form>
+        </div>
+
+        <div class="social-menu">
+            <div class="social-toggle">         
+                <img src="Asset/image/circle-info-solid (1).png" alt="info">
             </div>
-        </header>  
+
+            <li style="--i:0; --clr:#1877f2;">
+                <a href="https://www.facebook.com/BLACKPINKOFFICIAL/"
+                   target="_blank"
+                   title="Facebook">
+                    <img src="Asset/image/facebook-brands-solid.png" alt="Facebook">
+                </a>
+            </li>
+
+            <li style="--i:1; --clr:#e4405f;">
+                <a href="https://www.instagram.com/blackpinkofficial/"
+                   target="_blank"
+                   title="Instagram">
+                    <img src="Asset/image/instagram-brands-solid (1).png" alt="Instagram">
+                </a>
+            </li>
+
+            <li style="--i:2; --clr:#ff0000;">
+                <a href="https://www.youtube.com/@BLACKPINK"
+                   target="_blank"
+                   title="YouTube">
+                     <img src="Asset/image/youtube-brands-solid (1).png" alt="YouTube">
+                </a>
+            </li>
+
+            <li style="--i:3; --clr:#000000;">
+                <a href="https://www.tiktok.com/@bp_tiktok"
+                   target="_blank"
+                   title="TikTok">
+                     <img src="Asset/image/tiktok-brands-solid (1).png" alt="TikTok">
+                </a>
+            </li>
+
+            <li style="--i:4; --clr:#000000;">
+                <a href="https://x.com/BLACKPINK"
+                   target="_blank"
+                   title="X twiter">
+                     <img src="Asset/image/x-twitter-brands-solid (2).png" alt="X">
+                </a>
+            </li>
+
+            <li style="--i:5; --clr:#1db954;">
+                <a href="https://open.spotify.com/artist/41MozSoPIsD1dJM0CLPjZF"
+                   target="_blank"
+                   title="Spotify">
+                    <img src="Asset/image/spotify-brands-solid (1).png" alt="Spotify">
+                </a>
+            </li>
+        </div>
+    </header>
 </section>
 
 <section>
@@ -207,5 +335,6 @@
         </div>
     </footer>
 </section>
+<script src="Javascript.js"></script>
 </body>
 </html>
