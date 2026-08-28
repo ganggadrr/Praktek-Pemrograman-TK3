@@ -1,0 +1,260 @@
+body {
+    margin: 0; /* Menghilangkan jarak bawaan browser */
+    font-family: Arial, sans-serif; /* Menggunakan font Arial */
+}
+
+.header {
+    height: 80px; /* Menentukan tinggi header */
+    background-color: #ffe5c7; /* Memberikan warna krem pada header */
+    border: 1px solid orange; /* Memberikan garis orange */
+    display: flex; /* Menggunakan Flexbox */
+    align-items: center; /* Menempatkan isi di tengah secara vertikal */
+    justify-content: space-between; /* Logo di kiri dan menu di kanan */
+    padding: 0 50px; /* Memberikan jarak kiri dan kanan */
+    box-sizing: border-box; /* Border dan padding dihitung dalam ukuran */
+}
+
+.logo {
+    width: 60px; /* Menentukan lebar logo */
+    height: 60px; /* Menentukan tinggi logo */
+    border: 1px solid black; /* Memberikan garis hitam */
+    border-radius: 50%; /* Membuat logo berbentuk lingkaran */
+    background-color: white; /* Memberikan warna putih */
+    display: flex; /* Menggunakan Flexbox */
+    align-items: center; /* Menengahkan tulisan secara vertikal */
+    justify-content: center; /* Menengahkan tulisan secara horizontal */
+    font-size: 12px; /* Menentukan ukuran tulisan */
+}
+
+.menu {
+    display: flex; /* Membuat menu berada dalam satu baris */
+    gap: 30px; /* Memberikan jarak 30px antar menu */
+}
+
+.menu a {
+    color: black; /* Memberikan warna hitam pada tulisan */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    font-size: 14px; /* Menentukan ukuran tulisan menu */
+}
+
+.home {
+    height: 210px; /* Menentukan tinggi Home */
+    background-color: #d7e5f9; /* Memberikan warna biru muda */
+    border-left: 1px solid orange; /* Memberikan garis kiri */
+    border-right: 1px solid orange; /* Memberikan garis kanan */
+    border-bottom: 1px solid orange; /* Memberikan garis bawah */
+    display: flex; /* Menggunakan Flexbox */
+    align-items: center; /* Menengahkan isi secara vertikal */
+    justify-content: center; /* Menengahkan isi secara horizontal */
+    box-sizing: border-box; /* Border dihitung dalam ukuran */
+}
+
+.hero-text {
+    font-size: 13px; /* Menentukan ukuran teks Hero */
+}
+
+.services {
+    min-height: 230px; /* Menentukan tinggi minimal Services */
+    background-color: #fff1c9; /* Memberikan warna kuning muda */
+    border-left: 1px solid orange; /* Memberikan garis kiri */
+    border-right: 1px solid orange; /* Memberikan garis kanan */
+    border-bottom: 1px solid #b68be0; /* Memberikan garis bawah */
+    padding-top: 22px; /* Memberikan jarak bagian atas */
+    box-sizing: border-box; /* Mengatur perhitungan ukuran */
+}
+
+.services-title {
+    width: 105px; /* Menentukan lebar kotak */
+    height: 55px; /* Menentukan tinggi kotak */
+    background-color: white; /* Memberikan warna putih */
+    border: 1px solid black; /* Memberikan garis hitam */
+    border-radius: 9px; /* Membuat sudut kotak melengkung */
+    display: flex; /* Menggunakan Flexbox */
+    align-items: center; /* Menengahkan tulisan secara vertikal */
+    justify-content: center; /* Menengahkan tulisan secara horizontal */
+    margin: 0 auto 25px auto; /* Menempatkan kotak di tengah */
+}
+
+.services-title h1 {
+    font-size: 14px; /* Menentukan ukuran tulisan */
+    font-weight: normal; /* Membuat tulisan tidak terlalu tebal */
+    margin: 0; /* Menghilangkan margin bawaan h1 */
+}
+
+.services-content {
+    display: flex; /* Membuat 3 service berada dalam satu baris */
+    justify-content: space-between; /* Membagi jarak kiri, tengah, dan kanan */
+    align-items: flex-start; /* Membuat semua item sejajar dari bagian atas */
+    width: 100%; /* Menggunakan seluruh lebar */
+    padding: 0 40px; /* Memberikan jarak dari sisi kiri dan kanan */
+    box-sizing: border-box; /* Padding dihitung dalam ukuran */
+}
+
+.service-item {
+    flex: 1; /* Membagi ruang menjadi 3 bagian yang sama */
+    text-align: left; /* Tulisan rata kiri */
+}
+
+.service-item:nth-child(2) {
+    text-align: center; /* Service kedua berada di tengah */
+}
+
+.service-item:nth-child(3) {
+    text-align: right; /* Service ketiga berada di kanan */
+}
+
+.service-item p {
+    max-width: 150px; /* Membatasi lebar paragraf */
+    margin-top: 0; /* Menghilangkan jarak atas */
+}
+
+.service-item:nth-child(2) p {
+    margin-left: auto; /* Membuat paragraf berada di tengah */
+    margin-right: auto; /* Membuat paragraf berada di tengah */
+}
+
+.service-item:nth-child(3) p {
+    margin-left: auto; /* Membuat paragraf berada di kanan */
+}
+
+.about {
+    min-height: 230px; /* Menentukan tinggi bagian About */
+    background-color: #ebc9ff; /* Memberikan warna ungu muda */
+    border-left: 1px solid rgb(195, 0, 255); /* Membuat garis kiri */
+    border-right: 1px solid rgb(195, 0, 255); /* Membuat garis kanan */
+    border-bottom: 1px solid #77b55a; /* Membuat garis bawah */
+    padding-top: 22px; /* Memberikan jarak dari atas */
+    box-sizing: border-box; /* Mengatur ukuran agar tidak meluber */
+}
+
+.about-title {
+    width: 95px; /* Lebar kotak About */
+    height: 52px; /* Tinggi kotak About */
+    background-color: white; /* Warna kotak */
+    border: 1px solid black; /* Garis hitam */
+    border-radius: 9px; /* Membuat sudut kotak melengkung */
+    display: flex; /* Menggunakan Flexbox */
+    align-items: center; /* Menengahkan tulisan secara vertikal */
+    justify-content: center; /* Menengahkan tulisan secara horizontal */
+    margin: 0 auto 27px auto; /* Membuat kotak tepat di tengah */
+    box-sizing: border-box; /* Mengatur ukuran kotak */
+}
+
+.about-title h1 {
+    font-size: 12px; /* Ukuran tulisan About */
+    font-weight: normal; /* Tulisan tidak tebal */
+    margin: 0; /* Menghilangkan margin bawaan h1 */
+}
+
+.about-intro {
+    text-align: center; /* Membuat teks berada di tengah */
+    font-size: 11px; /* Ukuran tulisan */
+    margin-bottom: 22px; /* Jarak menuju dua kolom */
+}
+
+.about-content {
+    display: flex; /* Membuat dua kolom sejajar */
+    width: 100%; /* Menggunakan seluruh lebar About */
+    padding: 0 58px; /* Jarak kiri dan kanan */
+    box-sizing: border-box; /* Padding dihitung dalam ukuran */
+}
+
+.about-column {
+    width: 50%; /* Membagi menjadi dua bagian sama rata */
+    box-sizing: border-box; /* Mengatur ukuran kolom */
+}
+
+.about-column h2 {
+    font-size: 23px; /* Ukuran Heading dan Performance */
+    font-weight: bold; /* Membuat tulisan tebal */
+    margin: 0 0 14px 0; /* Memberikan jarak bawah */
+}
+
+.about-column p {
+    width: 180px; /* Membatasi lebar paragraf */
+    max-width: 180px; /* Memastikan paragraf tidak melebar */
+    font-size: 11px; /* Ukuran tulisan */
+    line-height: 1.2; /* Jarak antar baris */
+    margin: 0; /* Menghilangkan margin bawaan */
+}
+
+.wave {
+    width: 150px; /* Lebar wave */
+    height: 50px; /* Tinggi wave */
+    background-color: white; /* Warna putih */
+    border: 1px solid black; /* Garis hitam */
+    margin-top: 17px; /* Jarak dari Performance */
+    border-radius: 0 60% 0 60%; /* Membuat bentuk melengkung */
+}
+
+.contact {
+    min-height: 300px; /* Menentukan tinggi minimal Contact */
+    background-color: #d9ecd4; /* Memberikan warna hijau muda */
+    border-left: 1px solid #77b55a; /* Memberikan garis kiri */
+    border-right: 1px solid #77b55a; /* Memberikan garis kanan */
+    border-bottom: 1px solid orange; /* Memberikan garis bawah */
+    padding-top: 19px; /* Memberikan jarak bagian atas */
+    box-sizing: border-box; /* Mengatur perhitungan ukuran */
+}
+
+.contact-title {
+    width: 105px; /* Menentukan lebar kotak judul */
+    height: 55px; /* Menentukan tinggi kotak judul */
+    background-color: white; /* Memberikan warna putih */
+    border: 1px solid black; /* Memberikan garis hitam */
+    border-radius: 9px; /* Membuat sudut kotak melengkung */
+    display: flex; /* Menggunakan Flexbox */
+    align-items: center; /* Menengahkan tulisan secara vertikal */
+    justify-content: center; /* Menengahkan tulisan secara horizontal */
+    margin: 0 auto 20px auto; /* Menempatkan kotak di tengah */
+}
+
+.contact-title h1 {
+    font-size: 14px; /* Menentukan ukuran tulisan Contact */
+    font-weight: normal; /* Membuat tulisan tidak terlalu tebal */
+    margin: 0; /* Menghilangkan jarak bawaan h1 */
+}
+
+.contact-form {
+    width: 80%; /* Menentukan lebar area Contact */
+    margin: auto; /* Menempatkan area Contact di tengah */
+}
+
+.input-row {
+    display: flex; /* Membuat dua kotak berada dalam satu baris */
+    justify-content: space-between; /* Memberikan jarak antar kotak */
+    gap: 25px; /* Memberikan jarak 25px antar kotak */
+}
+
+.input-row input {
+    width: 50%; /* Membuat masing-masing kotak memiliki lebar 50% */
+    height: 45px; /* Menentukan tinggi kotak */
+    border: 2px solid black; /* Memberikan garis hitam */
+    border-radius: 3px; /* Membuat sudut sedikit melengkung */
+    box-sizing: border-box; /* Border dihitung dalam ukuran */
+    background-color: white; /* Memberikan warna putih pada kotak */
+}
+.contact-form textarea {
+    width: 100%; /* Membuat kotak besar memenuhi lebar Contact */
+    height: 100px; /* Menentukan tinggi kotak besar */
+    margin-top: 20px; /* Memberikan jarak dari dua kotak di atas */
+    border: 2px solid black; /* Memberikan garis hitam */
+    border-radius: 3px; /* Membuat sudut sedikit melengkung */
+    box-sizing: border-box; /* Border dihitung dalam ukuran */
+    background-color: white; /* Memberikan warna putih */
+}
+
+.footer {
+    height: 50px; /* Menentukan tinggi Footer */
+    background-color: #ffe5c7; /* Memberikan warna krem */
+    border-left: 1px solid orange; /* Memberikan garis kiri */
+    border-right: 1px solid orange; /* Memberikan garis kanan */
+    border-bottom: 1px solid orange; /* Memberikan garis bawah */
+    display: flex; /* Menggunakan Flexbox */
+    align-items: center; /* Menengahkan tulisan secara vertikal */
+    justify-content: center; /* Menengahkan tulisan secara horizontal */
+    font-size: 12px; /* Menentukan ukuran tulisan */
+    box-sizing: border-box; /* Mengatur perhitungan ukuran */
+}
+
+
